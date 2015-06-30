@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -march=native -O3  -D_GNU_SOURCE -std=c99 \
+CFLAGS = -march=native -O3 -D_GNU_SOURCE -std=c99 \
          -W -Wall -Werror
-LDFLAGS = -pthread
+LDFLAGS = -pthread -lrt -lpthread
 
 
 TARGETS = timectxsw timesyscall timetctxsw
