@@ -5,11 +5,18 @@ LDFLAGS = -pthread -lrt -lpthread
 
 
 TARGETS = timectxsw timesyscall timetctxsw
+TARGET = atimectxsw
 
-all: bench
+all: atomic
 
 bench: $(TARGETS)
 	./cpubench.sh
+
+
+atomic: $(TARGET)
+
+$(TARGET): $(TARGET).c
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $(TARGET) $(TARGET).c
 
 clean:
 	rm -f $(TARGETS)
