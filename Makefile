@@ -19,6 +19,6 @@ $(TARGET): $(TARGET).c
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $(TARGET) $(TARGET).c
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGETS) $(TARGET)
 
 .PHONY: all bench
